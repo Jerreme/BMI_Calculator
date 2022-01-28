@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -22,31 +22,21 @@
         android:elevation="8dp"
         android:gravity="center_horizontal|center_vertical"
         android:paddingTop="10dp"
+
         android:text="BMI CALCULATOR"
         android:textColor="#647C90"
-        android:textSize="18dp"
-
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:ignore="HardcodedText" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal"
-        android:paddingLeft="15dp"
-
-        android:paddingRight="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -62,32 +52,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal|center_vertical">
 
 
-            <TextView
-                android:id="@+id/textView3"
-                android:gravity="center_horizontal|center_vertical"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_marginTop="25dp"
-                android:textStyle="bold"
-                android:textColor="#647C90"
-                android:textSize="12dp"
-                android:text="Age (In Year)" />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:textStyle="bold"
+                    android:textColor="#647C90"
+                    android:textSize="12sp"
+                    android:text="Age (In Year)"
+                    tools:ignore="HardcodedText" />
 
-            <EditText
-                android:id="@+id/activity_main_age"
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:ems="2"
-                android:gravity="center_horizontal"
-                android:hint="18"
-                android:inputType="number"
-                android:textSize="40dp"
-                android:textStyle="bold"
-                android:textColor="#3d505e"
-                android:layout_marginTop="15dp"/>
+                <EditText
+                    android:id="@+id/activity_main_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:ems="2"
+                    android:gravity="center_horizontal"
+                    android:hint="18"
+                    android:inputType="number"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:textColor="#3d505e"
+                    android:importantForAutofill="no"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 
@@ -107,32 +98,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal|center_vertical">
 
 
-            <TextView
-                android:id="@+id/textView4"
-                android:gravity="center_horizontal|center_vertical"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_marginTop="25dp"
-                android:textStyle="bold"
-                android:textColor="#647C90"
-                android:textSize="12dp"
-                android:text="Weight (Kg)" />
 
-            <EditText
-                android:id="@+id/activity_main_weight"
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:ems="2"
-                android:gravity="center_horizontal"
-                android:hint="50"
-                android:inputType="number"
-                android:textSize="40dp"
-                android:textStyle="bold"
-                android:textColor="#3d505e"
-                android:layout_marginTop="15dp"/>
+                <TextView
+                    android:id="@+id/textView4"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:textStyle="bold"
+                    android:textColor="#647C90"
+                    android:textSize="12sp"
+                    android:text="Weight (Kg)"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/activity_main_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:ems="2"
+                    android:gravity="center_horizontal"
+                    android:hint="50"
+                    android:inputType="number"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:textColor="#3d505e"
+                    tools:ignore="HardcodedText"
+                    android:importantForAutofill="no" />
 
             </LinearLayout>
 
@@ -142,35 +135,31 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="150dp"
 
-        android:layout_marginTop="15dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_weight="0.5"
         android:background="@color/white"
         app:cardCornerRadius="25dp"
-        app:cardElevation="6dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:cardElevation="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal|center_vertical">
 
             <TextView
                 android:id="@+id/textView5"
                 android:gravity="center_horizontal|center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:layout_marginTop="25dp"
                 android:textStyle="bold"
                 android:textColor="#647C90"
                 android:textSize="12dp"
-                android:text="Height (Ft, In)" />
+                android:text="Height (Ft, In)"
+                tools:ignore="HardcodedText,SpUsage" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -183,7 +172,7 @@
                     android:id="@+id/numPicker"
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
                     android:theme="@style/numberPickerTheme"
 
 
@@ -193,17 +182,29 @@
                     android:id="@+id/numPicker2"
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:theme="@style/numberPickerTheme"
 
 
                     />
 
             </LinearLayout>
-
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:layout_weight="0.5"
+        android:background="@color/white"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="6dp"/>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -211,30 +212,36 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
         android:orientation="horizontal"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
 
         <Button
             android:id="@+id/button"
-            android:layout_width="100dp"
+            android:layout_width="130dp"
             android:layout_height="50dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/clear_btn"
             android:text="Clear"
             android:textColor="#647C90"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            tools:ignore="HardcodedText"
+            style="?android:attr/buttonBarButtonStyle" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="190dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:background="@drawable/calculate_btn"
             android:text="CALCULATE"
             android:textColor="#E2DED0"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText"
+            style="?android:attr/buttonBarButtonStyle" />
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
