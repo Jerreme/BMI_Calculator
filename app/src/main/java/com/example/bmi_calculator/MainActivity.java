@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
     Button clrBtn;
     Button calBtn;
 
-    int activeCol = Color.rgb(61, 80, 94),
-        inactiveCol = Color.rgb(158, 158, 158),
+    int activeCol = Color.rgb(107, 109, 108),
+        inactiveCol = Color.rgb(163, 163, 163),
 
         bmi_cleared = Color.rgb(116, 108, 112),
-        bmi_active = Color.rgb(247, 225, 190);
+        bmi_active = Color.rgb(118, 148, 171);
 
     int ageVal = 0,
         weightVal = 0,
@@ -167,6 +167,8 @@ public class MainActivity extends AppCompatActivity {
 
             bmi_int.setText(arrOfStr[0]);
             bmi_dec.setText("."+arrOfStr[1]);
+            bmi_int.setTextColor(bmi_active);
+            bmi_dec.setTextColor(bmi_active);
 
             classifyBMI(BMI_RESULT);
         } catch (Exception ex) {
