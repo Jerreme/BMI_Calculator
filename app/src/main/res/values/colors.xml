@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="foreground_active">#6B6D6C</color>
+    <color name="foreground_inactive">#a3a3a3</color>
+
+    <color name="primary_col">#DC7260</color>
+    <color name="secondary_col">##7694AB</color>
+    <color name="result_col">##76977D</color>
 </resources>
