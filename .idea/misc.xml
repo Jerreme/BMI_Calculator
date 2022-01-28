@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/jiide/Documents/AndroidStudio/BMI_Calculator/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/jiide/Documents/AndroidStudio/BMI_Calculator/app/src/main/res/drawable/dropshadow.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/jiide/Documents/AndroidStudio/BMI_Calculator/app/src/main/res/drawable/myrect.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/jiide/Documents/AndroidStudio/BMI_Calculator/app/src/main/res/drawable/shadow.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/jiide/Documents/AndroidStudio/BMI_Calculator/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/jiide/Documents/AndroidStudio/app/src/main/res/layout/activity_main.xml" value="0.33" />
       </map>
     </option>
@@ -13,5 +16,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>
