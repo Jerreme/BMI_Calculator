@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
         age.getText().clear();  weight.getText().clear();
         ft.setValue(5);         inch.setValue(4);
         bmi_int.setText("0");   bmi_dec.setText(".0");
+        remarks.setText("NULL");
 
         ft.setTextColor(inactiveCol);
         inch.setTextColor(inactiveCol);
