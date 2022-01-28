@@ -8,19 +8,7 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
-        android:background="#98c2e3"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.247"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.0" />
+
 
     <TextView
         android:id="@+id/textView"
@@ -104,17 +92,35 @@
 
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.8" />
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center_horizontal|center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="104dp"
+            android:layout_height="51dp"
+            android:background="@drawable/clear_btn"
+            android:text="Clear"
+            android:textColor="#647C90"
+            android:layout_marginRight="5dp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="184dp"
+            android:layout_height="49dp"
+            android:background="@drawable/calculate_btn"
+            android:text="CALCULATE"
+            android:textColor="#E2DED0"
+            android:layout_marginLeft="5dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
