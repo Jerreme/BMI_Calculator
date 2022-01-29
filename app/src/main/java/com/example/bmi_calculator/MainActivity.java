@@ -1,10 +1,9 @@
 package com.example.bmi_calculator;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,30 +14,20 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.color.DynamicColors;
 
 public class MainActivity extends AppCompatActivity {
+
     EditText age , weight;
     TextView remarks, bmi_int, bmi_dec, bmiLbl;
-    NumberPicker ft;
-    NumberPicker inch;
+    NumberPicker ft, inch;
+    Button clrBtn, calBtn;
 
-    Button clrBtn;
-    Button calBtn;
-
-    int activeCol = Color.rgb(107, 109, 108),
-        inactiveCol = Color.rgb(163, 163, 163),
-
-        bmi_cleared = Color.rgb(116, 108, 112),
-        bmi_active = Color.rgb(118, 148, 171);
-
-    int ageVal = 0,
-        weightVal = 0,
-        ftVal = 0,
-        inVal = 0;
+    int activeCol,
+        inactiveCol,
+        bmi_cleared,
+        bmi_active;
 
     double BMI_RESULT= 0.0f;
-    boolean cleared = false;
 
     private static final Double KILOGRAMS_IN_LBS = 2.2;
     private static final int INCHES_IN_FOOT = 12;
@@ -51,13 +40,16 @@ public class MainActivity extends AppCompatActivity {
     public static final String BMI_CATEGORY_OBESE2 = "Severely Obese";
     public static final String BMI_CATEGORY_OBESE3 = "Morbid Obese";
 
-
+    Resources res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Start your code here:
+
+        res = getResources();
+
         age = findViewById(R.id.age_val);
         weight = findViewById(R.id.weight_val);
 
@@ -72,10 +64,13 @@ public class MainActivity extends AppCompatActivity {
         clrBtn = findViewById(R.id.clearBtn);
         calBtn = findViewById(R.id.calculateBtn);
 
+        activeCol = res.getColor(R.color.foreground_active, null);
+        inactiveCol = res.getColor(R.color.foreground_inactive, null);
+        bmi_active = res.getColor(R.color.result_Active, null);
+        bmi_cleared = res.getColor(R.color.result_Inactive, null);
 
         ft.setMinValue(0);  inch.setMinValue(0);
         ft.setMaxValue(9);  inch.setMaxValue(12);
-
         ft.setValue(5); inch.setValue(4);
 
 
@@ -86,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 ft.setTextColor(activeCol);
-                ftVal = newVal;
             }
         });
 
@@ -95,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 inch.setTextColor(activeCol);
-                inVal = newVal;
             }
         });
 
@@ -118,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @SuppressLint("NewApi")
+    @SuppressLint({"NewApi", "SetTextI18n"})
     private void clearFields() {
         age.getText().clear();  weight.getText().clear();
         ft.setValue(5);         inch.setValue(4);
@@ -133,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         remarks.setTextColor(bmi_cleared);
     }
 
-    @SuppressLint("NewApi")
+    @SuppressLint({"NewApi", "SetTextI18n"})
     private void calculateFields() {
         if(age.length() == 0)
             age.setText("18");
@@ -147,11 +140,11 @@ public class MainActivity extends AppCompatActivity {
         if(inch.getValue() == 4)
             inch.setTextColor(activeCol);
 
-        double weightKg = 0.0f;
-        int heightFt = 0;
-        int heightIn = 0;
-        int weightLbs = 0;
-        double totalHeightInInches = 0.0f;
+        double weightKg;
+        int heightFt;
+        int heightIn;
+        int weightLbs;
+        double totalHeightInInches;
 
         try {
             //            int ageYr = Integer.parseInt(age.getText().toString());
@@ -182,22 +175,22 @@ public class MainActivity extends AppCompatActivity {
 
         if (bmi < 18.5) {
             category= BMI_CATEGORY_UNDERWEIGHT;
-            remarks.setTextColor(Color.rgb(135, 177, 217)); // blue
+            remarks.setTextColor(res.getColor(R.color.col_underweight, null)); // blue
         } else if (bmi >= 18.5 && bmi < 25) {
             category= BMI_CATEGORY_NORMAL;
-            remarks.setTextColor(Color.rgb(61, 211, 101)); // green
+            remarks.setTextColor(res.getColor(R.color.col_normal, null)); // green
         } else if (bmi >= 25 && bmi < 30) {
             category= BMI_CATEGORY_OVERWEIGHT;
-            remarks.setTextColor(Color.rgb(241, 229, 108)); // yellow
+            remarks.setTextColor(res.getColor(R.color.col_overweight, null)); // yellow
         } else if (bmi >= 30 && bmi < 35) {
             category= BMI_CATEGORY_OBESE1;
-            remarks.setTextColor(Color.rgb(253, 128, 46)); // orange
+            remarks.setTextColor(res.getColor(R.color.col_obese1, null)); // orange
         } else if (bmi >= 35 && bmi < 40) {
             category= BMI_CATEGORY_OBESE2;
-            remarks.setTextColor(Color.rgb(255, 108, 23)); // orange/red
+            remarks.setTextColor(res.getColor(R.color.col_obese2, null)); // orange/red
         } else if (bmi >= 40) {
             category= BMI_CATEGORY_OBESE3;
-            remarks.setTextColor(Color.rgb(255, 23, 23)); // red
+            remarks.setTextColor(res.getColor(R.color.col_obese3, null)); // red
         }
 
         remarks.setText(category.toUpperCase());
