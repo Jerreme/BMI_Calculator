@@ -1,0 +1,5 @@
+flutter_native_splash: ^2.2.15
+flutter pub run flutter_native_splash:create
+
+flutter_launcher_icons: ^0.11.0
+flutter pub run flutter_launcher_icons
