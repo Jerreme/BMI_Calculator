@@ -8,4 +8,4 @@ You can Download and Install the apk file in app>main>release/app-release.apk.
 Happy Coding :)))
 
 Author:
-  Jerreme De Torres
+  Mary Lhyn Cañete
